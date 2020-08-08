@@ -1,0 +1,18 @@
+import argparse
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--name", help="first number")
+    parser.add_argument("--mname ", help="second number")
+    parser.add_argument("--gender", help="operation", \
+                        choices=["mame","female","other"])
+
+    args = parser.parse_args()
+
+    print(args.name)
+    print(args.mname)
+    print(args.gender)
+    
+Syntax
+python test.py --name imran --mname nissar --gender male 
+In gender their are choices so we cant take any other input
