@@ -1,0 +1,18 @@
+import json
+import requests
+import time
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--Target", help="Enter your Target")
+args = parser.parse_args()
+print (args.Target)
+def slack(msg):
+    t_data={}
+    t_data['text']=msg
+    data=json.dumps(t_data)
+    res=requests.post("https://hooks.slack.com/services/TEST/TEST",data=data,headers={"content-type":"application/json"})
+    print('sending to slack [ Automation ]')
+slack('Scannig domain ' + args.Target)
+
+Syntax
+Python webhook.py --Target test.com
