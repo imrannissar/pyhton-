@@ -1,0 +1,16 @@
+**Get requests**
+
+import requests
+r = requests.get('https://test.com')
+print(r)
+
+
+
+**Response grabber to text file**
+
+import requests
+r = requests.get('https://test.com')
+file = open("resp_text.txt", "w")
+file.write(r.text)
+file.close()
+
