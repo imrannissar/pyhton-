@@ -1,4 +1,4 @@
-**Get requests**
+==Get requests==
 
 import requests
 r = requests.get('https://test.com')
@@ -6,11 +6,25 @@ print(r.text)
 
 
 
-**Response grabber to text file**
+==Response grabber to text file==
 
 import requests
 r = requests.get('https://test.com')
 file = open("resp_text.txt", "w")
+file.write(r.text)
+file.close()
+
+==Response grabber with console argument==
+python request.py --url https://test.com
+
+import requests
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--url", help="Enter Url")
+args = parser.parse_args()
+r = requests.get(args.url)
+file = open('t.txt',"w+")
 file.write(r.text)
 file.close()
 
